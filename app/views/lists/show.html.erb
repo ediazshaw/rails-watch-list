@@ -1,0 +1,12 @@
+<h1>Details</h1>
+<h2><%= @list.name %></h2>
+<% if @list.bookmarks.present? %>
+  <ul class="list-group">
+    <% @list.bookmarks.each do |bookmark| %>
+      <li class="list-group-item"><%= bookmark.movie.title %>: <%= bookmark.comment%></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Be the first to leave a bookmark!</p>
+<% end %>
+<%= link_to 'New Bookmark', new_list_bookmark_path(@list) %>
