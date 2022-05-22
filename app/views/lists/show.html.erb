@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
 <h1 class= "title d-flex"><%= @list.name %></h1>
 </div>
 <div class="song-title d-flex mt-5">
@@ -57,4 +57,7 @@
 <% else %>
   <p>Be the first to leave a bookmark!</p>
 <% end %>
-</div>
+
+<%= link_to lists_path do %>
+<div class="btn btn-primary mt-5">Back to My Lists</div>
+<% end %>

@@ -30,7 +30,12 @@
 </div>
 
 <div class="banner">
-<h1 class= "title d-flex">Save any kind of music</h1>
+<div class="in-banner">
+<h1 class= "title d-flex">Save any kind of music </h1>
+<p>
+  <span data-controller="typed-js"></span>
+</p>
+</div>
 </div>
 <div class="big-cont">
 <div class="after-banner d-flex"><h2>My Lists</h2>
@@ -40,7 +45,7 @@
 </div>
 <div class="cards">
 <% @lists.each do |list| %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870)">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.jpg') %>')">
   <div class="title d-flex">
     <%= link_to list.name, list_path(list) %>
   </div>
